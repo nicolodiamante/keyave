@@ -1,4 +1,4 @@
-<p align="center"><a href="#"><img src="https://github.com/nicolodiamante/keyave/assets/48920263/dc79710c-a54b-4bd4-be89-18ae53f39a94" draggable="false" ondragstart="return false;" alt="Keyave Title" title="Keyave" /></a></p>
+<p align="center"><a href="#"><img src="https://github.com/nicolodiamante/keyave/assets/48920263/efa4aa70-b611-4dde-8f5f-5141e69c95b0" draggable="false" ondragstart="return false;" alt="Keyave Title" title="Keyave" /></a></p>
 
 iCloud Keychain is an incredibly useful feature for Apple users that provides a secure and convenient way to manage passwords and other sensitive information. With iCloud Keychain, you can store your login credentials, credit card information, Wi-Fi passwords, and other important data securely on your Apple devices.
 
@@ -59,7 +59,7 @@ Once the Shortcut is in your Applications folder, you can easily access it using
 Macs have a fingerprint scanner (Touch ID) to simplify the login process. iCloud Keychain works best when you leverage Apple’s biometric system to make filling passwords quick and easy. Then you won’t need to type your Apple ID password or passcode whenever you need to fill in a field, but this is not activated by default in the terminal, which means that when you run programs with security privileges, you need to type the password.
 <br/><br/><br/><br/>
 
-<p align="center"><a href="#"><img src="https://github.com/nicolodiamante/keyave/assets/48920263/8a3c0a2e-23cb-469c-8b23-be0dffd21c8e" draggable="false" ondragstart="return false;" alt="Use Touch ID in Terminal" title="Use Touch ID in Terminal" width="500px" /></a></p><br/><br/><br/>
+<p align="center"><a href="#"><img src="https://github.com/nicolodiamante/keyave/assets/48920263/33838fb7-028a-498f-bca8-b6a4a82cec7b" draggable="false" ondragstart="return false;" alt="Use Touch ID in Terminal" title="Use Touch ID in Terminal" width="500px" /></a></p><br/><br/><br/>
 
 The following change will allow you to use Touch ID for authentication.
 
