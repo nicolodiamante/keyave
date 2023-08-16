@@ -157,7 +157,6 @@ iCloud may be Apple’s thing, but you can still get your passwords even if you 
 
 Apple's iCloud Keychain is a password manager that offers end-to-end encryption and biometric authentication for added security. It securely stores your passwords, credit card details, and other sensitive information across your Apple devices. The latest updates have made it more proactive, scanning for potential password breaches and allowing third-party apps to store information.
 
-
 <br><br>
 
 <p align="center">
@@ -210,14 +209,15 @@ Any suggestions or feedback you may have for improvement are welcome. If you enc
 </p>
 
 <!-- Link labels: -->
+
 [icloud-windows]: https://support.apple.com/en-us/HT204283
 [chrome-windows]: https://apps.microsoft.com/store/detail/icloud/9PKTQ5699M62?hl=en-us&gl=us&rtc=1&activetab=pivot%3Aoverviewtab
-[passwords-shortcut]: https://www.icloud.com/shortcuts/102975c20c394cc89dcb7ac15b057848
+[passwords-shortcut]: https://www.icloud.com/shortcuts/4f64b768407042e2bc75f048f9ec031a
 [setup-keychain]: https://support.apple.com/en-au/HT204085
 [security-overview]: https://support.apple.com/en-au/HT202303
 [two-factor]: https://support.apple.com/en-us/HT204915
 [passkeys-mac]: https://support.apple.com/en-au/HT211145
 [passkeys-iphone]: https://support.apple.com/en-au/HT211146
-[touchid-mac]:https://support.apple.com/en-mt/guide/mac-help/mchl16fbf90a/mac
+[touchid-mac]: https://support.apple.com/en-mt/guide/mac-help/mchl16fbf90a/mac
 [apple-shortcuts-guide]: https://support.apple.com/en-gb/guide/shortcuts/welcome/ios
 [issues]: https://github.com/nicolodiamante/keyave/issues
