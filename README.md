@@ -13,7 +13,7 @@ Another key benefit of iCloud Keychain is that it offers end-to-end encryption t
 
 In addition to encryption, iCloud Keychain also supports biometric authentication, which means that you can use Touch ID or Face ID to unlock your passwords and other information. This adds an extra layer of security to your data, making it much more difficult for anyone to access your accounts without your permission.
 
-Overall, iCloud Keychain is an incredibly powerful tool that makes it easy to manage your passwords and other sensitive information securely across all your Apple devices. If you're not already using it, you should definitely consider turning it on to take advantage of its many benefits.
+Overall, iCloud Keychain is an incredibly powerful tool that makes it easy to manage your passwords and other sensitive information securely across all your Apple devices. If you're not already using it, you should consider turning it on to take advantage of its many benefits.
 
 <br><br>
 
@@ -54,40 +54,7 @@ Using a password manager is essential in today's digital age. With so many accou
 
 To access the password manager on your Apple device, navigate to Settings or System Preferences, depending on which OS you are using. However, having to navigate to this location every time you want to manage your passwords can be time-consuming.
 
-With a simple shortcut, you'll be able to easily access to your passwords with a single tap from your home screen in iOS and iPadOS or in the menu bar in macOS. [Download the shortcut here][passwords-shortcut].
-
-<br><br>
-
-<p align="center">
-  <picture>
-    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/19322057-98db-4c90-99f3-3234ec05e224" draggable="false" ondragstart="return false;" alt="Download Shortcut" title="Download Shortcut" width="600px" />
-  </picture>
-</p>
-
-<br><br>
-
-Here are some elaborations on how to add the Shortcut to your Applications folder on your Mac for easy access:
-
-Open the Shortcuts app on your Mac <a href="#"><img src="https://github.com/nicolodiamante/keyave/assets/48920263/b8dd686e-4971-428d-86aa-f2dd0d0d9c94" draggable="false" ondragstart="return false;" alt="Arrow" title="Arrow" width="5.4px" /></a> Open Passwords <a href="#"><img src="https://user-images.githubusercontent.com/48920263/113451325-0df5f380-9402-11eb-80ea-cf4140340ab4.png" draggable="false" ondragstart="return false;" alt="Arrow" title="Arrow" width="5.4px" /></a> Click on the File menu in the top-left corner of the screen <a href="#"><img src="https://user-images.githubusercontent.com/48920263/113451325-0df5f380-9402-11eb-80ea-cf4140340ab4.png" draggable="false" ondragstart="return false;" alt="Arrow" title="Arrow" width="5.4px" /></a> Click on Add to Dock from the dropdown menu.
-
-The Shortcut will now be added to your Dock for easy access. If you want to add it to your Applications folder, simply click and drag the Shortcut from the Dock to the Applications folder icon in the Dock. Alternately, you can also drag the Shortcut to the Applications folder in Finder.
-
-<br><br>
-
-<p align="center">
-  <picture>
-    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/8e45a442-9bcd-4bd1-9586-683bf753577d" draggable="false" ondragstart="return false;" alt="Spotlight Search of password.app" title="Spotlight Search of password.app" width="700px" />
-  </picture>
-</p>
-
-<br><br>
-
-Once the Shortcut is in your Applications folder, you can easily access it using Spotlight by simply typing in the name of the Shortcut. This can be a quick and convenient way to access your password manager and stay on top of your password management needs.
-<br><br>
-
-## Manage passwords in the terminal
-
-### How to set Touch ID in the macOS's Terminal
+### Manage passwords in the terminal
 
 Macs have a fingerprint scanner (Touch ID) to simplify the login process. iCloud Keychain works best when you leverage Apple’s biometric system to make filling passwords quick and easy. Then you won’t need to type your Apple ID password or passcode whenever you need to fill in a field, but this is not activated by default in the terminal, which means that when you run programs with security privileges, you need to type the password.
 
@@ -101,23 +68,81 @@ Macs have a fingerprint scanner (Touch ID) to simplify the login process. iCloud
 
 <br><br>
 
-The following change will allow you to use Touch ID for authentication.
+Access your passwords swiftly and conveniently with a straightforward shortcut. For iOS and iPadOS users, this means a single tap from your home screen, while macOS users can find it readily in the menu bar or by pressing `⇧⌘P`. To get started, you can directly [download the shortcut here][passwords-shortcut]. Alternatively, you can follow the provided instructions to download and execute a script. This script not only downloads the shortcut for you but also configures your terminal environment to use Touch ID, streamlining your authentication process significantly.
 
-Open the Terminal application on your Mac and edit the file below:
+<br><br>
+
+<p align="center">
+  <picture>
+    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/19322057-98db-4c90-99f3-3234ec05e224" draggable="false" ondragstart="return false;" alt="Download Shortcut" title="Download Shortcut" width="600px" />
+  </picture>
+</p>
+
+<br><br>
+
+## Getting Started
+
+Keyave is a script designed to automate the setup of Touch ID authentication for terminal operations on Mac, replacing the need for password entry. Choose from two methods for installation:
+
+**Automatic Download via `curl`**: Simply execute the following command in your terminal to quickly download and seamlessly install the utility:
 
 ```shell
-nano /etc/pam.d/sudo
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/nicolodiamante/keyave/HEAD/bootstrap.sh)"
 ```
 
-Add the following line to the top of the file:
+**Manual Cloning**: For those who prefer a hands-on approach, you can manually clone the repository to your desired location (`~/keyave` in this case):
 
 ```shell
-auth sufficient pam_tid.so
+git clone https://github.com/nicolodiamante/keyave.git ~/keyave
 ```
 
-Save and exit the file.
+<br>
 
-Now, when you use the `sudo` command in the terminal you should be prompted to use Touch ID instead of typing in your password. This can save time and add an extra layer of security to your system.
+### Post-Download Steps
+
+**Directory Navigation & Script Execution**: Navigate to the repository's `utils` directory and execute the installation script:
+
+```shell
+source install.sh
+```
+
+The script begins by checking your Mac's compatibility with Touch ID. If compatible, it provides the option to enable Touch ID for sudo commands, allowing for fingerprint-based authentication. Additionally, it features an option for automatic unlocking when the Mac is docked. These enhancements are specifically tailored to be applicable only on Mac models that support Touch ID, ensuring broad compatibility.
+
+This streamlined approach not only simplifies the authentication process but also enhances security and user experience on macOS.
+
+<br>
+
+## Final Thoughts
+
+Apple's iCloud Keychain, integrated seamlessly into macOS menus and apps, stands out as an accessible and straightforward password management solution, particularly for casual users or families seeking ease of use. Beyond just storing passwords, iCloud Keychain extends its capabilities to encompass credit card details and other sensitive data, securely syncing across Apple devices. Enhanced by end-to-end encryption and biometric authentication, it not only offers a cost-effective option for secure login management but also stays proactive in scanning for potential password breaches. Recent updates have further enriched its functionality, allowing even third-party apps to utilize its secure storage features. This combination of user-friendly interface, advanced security measures, and comprehensive coverage makes iCloud Keychain a noteworthy choice in the realm of password managers.
+
+<br><br>
+
+<p align="center">
+  <picture>
+    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/518443e1-1c2a-46dd-addb-d37d5685a1b7" draggable="false" ondragstart="return false;" alt="Siri launching Shortcut Passwords" title="Siri launching Shortcut Passwords" width="650px" />
+  </picture>
+</p>
+
+<br><br>
+
+## Notes
+
+### Easy access to the Shortcut using Spotlight
+
+To access the Shortcut using Spotlight, follow these steps:
+
+Open the Shortcuts app on your Mac <a href="#"><img src="https://github.com/nicolodiamante/keyave/assets/48920263/b8dd686e-4971-428d-86aa-f2dd0d0d9c94" draggable="false" ondragstart="return false;" alt="Arrow" title="Arrow" width="5.4px" /></a> Open Passwords <a href="#"><img src="https://user-images.githubusercontent.com/48920263/113451325-0df5f380-9402-11eb-80ea-cf4140340ab4.png" draggable="false" ondragstart="return false;" alt="Arrow" title="Arrow" width="5.4px" /></a> Click on the File menu in the top-left corner of the screen <a href="#"><img src="https://user-images.githubusercontent.com/48920263/113451325-0df5f380-9402-11eb-80ea-cf4140340ab4.png" draggable="false" ondragstart="return false;" alt="Arrow" title="Arrow" width="5.4px" /></a> Click on Add to Dock from the dropdown menu.
+
+Once you add the Shortcut to your Dock, it becomes readily accessible. You can also use Spotlight to open it by simply typing the Shortcut's name. After adding it to Spotlight, you have the option to remove the Shortcut from the Dock if you prefer. This method offers a quick and convenient way to access your password manager, ensuring efficient management of your passwords.
+
+<br>
+
+<p align="center">
+  <picture>
+    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/8e45a442-9bcd-4bd1-9586-683bf753577d" draggable="false" ondragstart="return false;" alt="Spotlight Search of password.app" title="Spotlight Search of password.app" width="700px" />
+  </picture>
+</p>
 
 <br>
 
@@ -126,20 +151,10 @@ Now, when you use the `sudo` command in the terminal you should be prompted to u
 In Apple's default terminal it works like a charm, but in iTerm2 it needs additional configuration.
 
 Go to Prefs <img src="https://user-images.githubusercontent.com/48920263/113451325-0df5f380-9402-11eb-80ea-cf4140340ab4.png" draggable="false" ondragstart="return false;" alt="Arrow" title="Arrow" width="5.4px" /> Advanced <img src="https://user-images.githubusercontent.com/48920263/113451325-0df5f380-9402-11eb-80ea-cf4140340ab4.png" draggable="false" ondragstart="return false;" alt="Arrow" title="Arrow" width="5.4px" /> Allow sessions to survive logging out and back in <img src="https://user-images.githubusercontent.com/48920263/113451325-0df5f380-9402-11eb-80ea-cf4140340ab4.png" draggable="false" ondragstart="return false;" alt="Arrow" title="Arrow" width="5.4px" /> Set the value to no <img src="https://user-images.githubusercontent.com/48920263/113451325-0df5f380-9402-11eb-80ea-cf4140340ab4.png" draggable="false" ondragstart="return false;" alt="Arrow" title="Arrow" width="5.4px" /> Restart iTerm.
-<br/><br/>
 
-### Dealing with Touch ID when docked
+<br>
 
-To ensure that Touch ID is prompted instead of typing in a password when the computer is plugged in, you can use the following command in the Terminal:
-
-```shell
-defaults write com.apple.security.authorization ignoreArd -bool TRUE
-```
-
-This command enables the "auto unlock" feature on your Mac, which allows you to use Touch ID to authenticate actions that require administrator privileges, such as installing software or changing system settings, without having to type in your password. By default, this feature is only available when your Mac is in close proximity to your Apple Watch, but the above command extends it to when your Mac is plugged in with a dock.
-<br><br>
-
-## Access your iCloud passwords with Chrome on Windows
+### Access your iCloud passwords with Chrome on Windows
 
 iCloud may be Apple’s thing, but you can still get your passwords even if you have an iPhone and a PC. You’ll need to [download iCloud for Windows][icloud-windows] first and ensure it’s updated to the latest version. Then you’ll need to grab the [iCloud Passwords extension in the Chrome store][chrome-windows] and sign in to turn on both. Once you enter your verification code, you can grab passwords from your iCloud Keychain when visiting a site in Chrome on your PC, just as if you were using Safari on your Mac.
 
@@ -152,27 +167,6 @@ iCloud may be Apple’s thing, but you can still get your passwords even if you 
 </p>
 
 <br><br>
-
-## Final Thoughts
-
-Apple's iCloud Keychain is a password manager that offers end-to-end encryption and biometric authentication for added security. It securely stores your passwords, credit card details, and other sensitive information across your Apple devices. The latest updates have made it more proactive, scanning for potential password breaches and allowing third-party apps to store information.
-
-<br><br>
-
-<p align="center">
-  <picture>
-    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/518443e1-1c2a-46dd-addb-d37d5685a1b7" draggable="false" ondragstart="return false;" alt="Siri launching Shortcut Passwords" title="Siri launching Shortcut Passwords" width="650px" />
-  </picture>
-</p>
-
-<br><br>
-
-### Conclusion
-
-In conclusion, Apple's Keychain integration into the macOS menus and apps makes it a choice for casual users or family members who want a simple and accessible solution. While it's not the only password manager available, iCloud Keychain offers a cost-effective and user-friendly option for those looking to securely store their login information.
-<br/><br/>
-
-## Notes
 
 ### Resources
 
@@ -212,7 +206,7 @@ Any suggestions or feedback you may have for improvement are welcome. If you enc
 
 [icloud-windows]: https://support.apple.com/en-us/HT204283
 [chrome-windows]: https://apps.microsoft.com/store/detail/icloud/9PKTQ5699M62?hl=en-us&gl=us&rtc=1&activetab=pivot%3Aoverviewtab
-[passwords-shortcut]: https://www.icloud.com/shortcuts/4f64b768407042e2bc75f048f9ec031a
+[passwords-shortcut]: https://www.icloud.com/shortcuts/d25f1cdf4e7542d1b856d3f29ed52613
 [setup-keychain]: https://support.apple.com/en-au/HT204085
 [security-overview]: https://support.apple.com/en-au/HT202303
 [two-factor]: https://support.apple.com/en-us/HT204915
