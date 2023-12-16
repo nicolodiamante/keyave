@@ -68,14 +68,17 @@ Macs have a fingerprint scanner (Touch ID) to simplify the login process. iCloud
 
 <br><br>
 
-Access your passwords swiftly and conveniently with a straightforward shortcut. For iOS and iPadOS users, this means a single tap from your home screen, while macOS users can find it readily in the menu bar or by pressing `⇧⌘P`. To get started, you can directly [download the shortcut here][passwords-shortcut]. Alternatively, you can follow the provided instructions to download and execute a script. This script not only downloads the shortcut for you but also configures your terminal environment to use Touch ID, streamlining your authentication process significantly.
+Access your passwords swiftly and conveniently with a straightforward shortcut. For iOS and iPadOS users, this means a single tap from your home screen, while macOS users can find it readily in the menu bar or by pressing `⇧⌘P`. To get started, you can directly download the shortcut [here][passwords-shortcut]. Alternatively, you can follow the provided instructions to download and execute a script. This script not only downloads the shortcut for you but also configures your terminal environment to use Touch ID, streamlining your authentication process significantly.
 
 <br><br>
 
 <p align="center">
-  <picture>
-    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/19322057-98db-4c90-99f3-3234ec05e224" draggable="false" ondragstart="return false;" alt="Download Shortcut" title="Download Shortcut" width="600px" />
-  </picture>
+  <a href="https://www.icloud.com/shortcuts/ff2374796e2a456a9e33da74d1191e99" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/keyave/assets/48920263/1b838eac-5400-45be-be27-66cf3ba58fae" draggable="false" ondragstart="return false;" alt="Download the Shortcut" title="Download Passwords" />
+      <img src="https://github.com/nicolodiamante/keyave/assets/48920263/80d9b639-fa5a-4102-84d8-525423c46f8f" draggable="false" ondragstart="return false; "alt="Download the Shortcut" title="Download Passwords" width="600" />
+    </picture>
+  </a>
 </p>
 
 <br><br>
@@ -190,9 +193,9 @@ Any suggestions or feedback you may have for improvement are welcome. If you enc
 </p>
 
 <p align="center">
-  <picture>
-    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/2d0620de-3df3-4253-904d-c0d1a1116413" draggable="false" ondragstart="return false;" alt="Nicol&#242; Diamante" title="Nicol&#242; Diamante" width="17px" />
-  </picture>
+  <a href="https://nicolodiamante.com" target="_blank">
+    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/2d0620de-3df3-4253-904d-c0d1a1116413" draggable="false" ondragstart="return false;" alt="Nicol&#242; Diamante Portfolio" title="Nicol&#242; Diamante" width="17px" />
+  </a>
 </p>
 
 <p align="center">
@@ -206,7 +209,7 @@ Any suggestions or feedback you may have for improvement are welcome. If you enc
 
 [icloud-windows]: https://support.apple.com/en-us/HT204283
 [chrome-windows]: https://apps.microsoft.com/store/detail/icloud/9PKTQ5699M62?hl=en-us&gl=us&rtc=1&activetab=pivot%3Aoverviewtab
-[passwords-shortcut]: https://www.icloud.com/shortcuts/d25f1cdf4e7542d1b856d3f29ed52613
+[passwords-shortcut]: https://www.icloud.com/shortcuts/ff2374796e2a456a9e33da74d1191e99
 [setup-keychain]: https://support.apple.com/en-au/HT204085
 [security-overview]: https://support.apple.com/en-au/HT202303
 [two-factor]: https://support.apple.com/en-us/HT204915
