@@ -54,9 +54,9 @@ Using a password manager is essential in today's digital age. With so many accou
 
 ### Access passwords with a Shortcut
 
-To access the password manager on your Apple device, simply go to Settings (on iOS) or System Preferences (on macOS), and locate the Passwords option. Nonetheless, the need to revisit this location each time you wish to manage your passwords can be quite time-consuming.
+To access the password manager on your Apple device, go to Settings (iOS) or System Preferences (macOS) and locate the Passwords option. However, revisiting this location each time can be time-consuming.
 
-Access your passwords swiftly and conveniently with a straightforward shortcut can streamline your workflow. For iOS and iPadOS users, this means a single tap from your home screen, while macOS users can find it readily in the menu bar. To get started, ensure that you have the [Apple Shortcuts][apple-shortcuts-download] app installed. Next, download the [Passwords Shortcut][passwords-shortcut] or follow the provided instructions to download and run the script. This script not only retrieves the shortcut for you but also configures your terminal environment for Touch ID, significantly streamlining your authentication process.
+To streamline the process and easily access your passwords, use the Passwords shortcut. For iOS and iPadOS users, it's a single tap from the home screen, while macOS users can find it in the menu bar. Make sure you have the [Apple Shortcuts][apple-shortcuts-download] app installed, and then download the [Passwords Shortcut][passwords-shortcut] or follow the provided instructions to download and run the script. This script retrieves the shortcut and configures your terminal environment for Touch ID, simplifying your authentication process.
 
 <br><br>
 
@@ -100,21 +100,21 @@ You can either manually set up Touch ID in your terminal by following the provid
 
 ### Before macOS Sonoma (Pre-macOS 14)
 
-1. **Open Terminal**: Start by launching the Terminal application on your Mac.
+1. **Open Terminal:** Start by launching the Terminal application on your Mac.
 
-2. **Edit Configuration**: Open the `/etc/pam.d/sudo` file in a text editor. For example, using nano, enter:
+2. **Edit Configuration:** Open the `/etc/pam.d/sudo` file in a text editor. For example, using nano, enter:
 
    ```shell
    sudo nano /etc/pam.d/sudo
    ```
 
-3. **Integrate Touch ID**: At the beginning of the file, insert this line:
+3. **Integrate Touch ID:** At the top of the file, add the following line:
 
    ```shell
    auth       sufficient     pam_tid.so
    ```
 
-4. **Save Changes**: After adding the line, save your changes and exit the text editor.
+4. **Save Changes:** After adding the line, save your changes and exit the text editor.
 
 Following these steps enables Touch ID authentication for the sudo command in Terminal, allowing fingerprint verification instead of a password prompt.
 
@@ -124,19 +124,25 @@ Following these steps enables Touch ID authentication for the sudo command in Te
 
 macOS Sonoma introduced `/etc/pam.d/sudo_local`, a new file to maintain Touch ID configurations for sudo across system updates. Here's the setup process:
 
-1. **Verify sudo Presence**: macOS Sonoma includes a `sudo_local.template` file. Confirm its existence with:
+1. **Check for the template:** macOS Sonoma includes a `sudo_local.template` file. Ensure its existence with:
 
    ```shell
-   sudo cp sudo_local.template /etc/pam.d/sudo_local
+   ls /etc/pam.d/sudo_local.template
    ```
 
-2. **Create File**: If the `sudo_local.template` is present, duplicate it to create `sudo_local`:
+2. **Create File:** If the `sudo_local.template` exists, copy it to create `sudo_local`:
 
    ```shell
    sudo cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local
    ```
 
-3. **Modify Configuration**: Edit the `sudo_local` file in a text editor. Change:
+3. **Edit sudo_local configuration:** Open `sudo_local` in a text editor, for example:
+
+   ```shell
+   sudo nano /etc/pam.d/sudo_local
+   ```
+
+4. **Uncomment Touch ID rule:** Uncomment the Touch ID rule by removing the `#`` at the beginning of the line:
 
    ```shell
    #auth       sufficient     pam_tid.so
@@ -148,7 +154,7 @@ macOS Sonoma introduced `/etc/pam.d/sudo_local`, a new file to maintain Touch ID
    auth       sufficient     pam_tid.so
    ```
 
-4. **Save and Test**: After editing, save the changes, close the editor, and test the new configuration by using the sudo command in Terminal.
+5. **Save and Test:** After editing, save the changes, close the editor, and test the new configuration by using the sudo command in Terminal.
 
 These steps enable Touch ID authentication for sudo commands on macOS Sonoma and later versions. For automated setup, consider using a script as outlined below.
 
@@ -158,13 +164,13 @@ These steps enable Touch ID authentication for sudo commands on macOS Sonoma and
 
 Keyave is a script designed to automate the setup of Touch ID authentication for terminal operations on Mac, replacing the need for password entry. Choose from two methods for installation:
 
-**Automatic Download via `curl`**: Simply execute the following command in your terminal to quickly download and seamlessly install the utility:
+**Automatic Download via `curl`:** Simply execute the following command in your terminal to quickly download and seamlessly install the utility:
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/nicolodiamante/keyave/HEAD/bootstrap.sh)"
 ```
 
-**Manual Cloning**: For those who prefer a hands-on approach, you can manually clone the repository to your desired location (`~/keyave` in this case):
+**Manual Cloning:** For those who prefer a hands-on approach, you can manually clone the repository to your desired location (`~/keyave` in this case):
 
 ```shell
 git clone https://github.com/nicolodiamante/keyave.git ~/keyave
