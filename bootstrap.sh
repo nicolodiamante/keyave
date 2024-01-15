@@ -46,7 +46,7 @@ else
   exit 1
 fi
 
-echo 'Installing Prune...'
+echo 'Installing Keyave...'
 
 # Create the target directory and proceed with the chosen download method.
 if ! mkdir -p "${TARGET}"; then

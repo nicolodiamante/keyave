@@ -5,25 +5,23 @@
   </picture>
 </p>
 
-iCloud Keychain is an incredibly useful feature for Apple users that provides a secure and convenient way to manage passwords and other sensitive information. With iCloud Keychain, you can store your login credentials, credit card information, Wi-Fi passwords, and other important data securely on your Apple devices.
+iCloud Keychain is a handy feature for Apple users that provides a secure and convenient way to manage passwords and other sensitive information. With iCloud Keychain, you can securely store your login credentials, credit card information, Wi-Fi passwords, and other important data on your Apple devices.
 
-One of the advantages of using iCloud Keychain is that it eliminates the need to remember complex passwords for every website and app you use. Instead, you can rely on the password manager to generate strong, unique passwords that are automatically saved and synced across all your devices. This means that you can easily access your accounts from any Apple device without having to type in your login information every time.
+At its core, iCloud Keychain champions data security. It ensures data security with end-to-end encryption, allowing only trusted devices linked to your iCloud account to access the information. Moreover, iCloud Keychain bolsters security with biometric authentication methods like Touch ID or Face ID.
 
-Another key benefit of iCloud Keychain is that it offers end-to-end encryption to protect your data from unauthorised access. This means that your passwords and other sensitive information are encrypted on your device and can only be decrypted by other trusted devices that are signed in to your iCloud account.
+Overall, iCloud Keychain is a potent tool that makes it easy to manage your passwords and other sensitive information securely across all your Apple devices. If you're not already using it, you should consider turning it on to take advantage of its many benefits.
 
-In addition to encryption, iCloud Keychain also supports biometric authentication, which means that you can use Touch ID or Face ID to unlock your passwords and other information. This adds an extra layer of security to your data, making it much more difficult for anyone to access your accounts without your permission.
-
-Overall, iCloud Keychain is an incredibly powerful tool that makes it easy to manage your passwords and other sensitive information securely across all your Apple devices. If you're not already using it, you should consider turning it on to take advantage of its many benefits.
-
-<br><br>
+<br><br><br>
 
 <p align="center">
-  <picture>
-    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/b581205a-3993-47f9-a6e8-6290c09b6987" draggable="false" ondragstart="return false; "alt="Keyave" title="Keyave" width="600px" />
-  </picture>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/keyave/assets/48920263/1413b988-05fb-4587-8ba7-363a68bebc28" draggable="false" ondragstart="return false;" alt="System settings Passwords" title="System settings Passwords" />
+      <img src="https://github.com/nicolodiamante/keyave/assets/48920263/92ff64a6-0935-431a-8315-c757e8671b47" draggable="false" ondragstart="return false; "alt="System settings Passwords" title="System settings Passwords" width="600" />
+    </picture>
+  </a>
 </p>
 
-<br><br>
+<br><br><br>
 
 ## The benefits of using iCloud Keychain
 
@@ -52,7 +50,26 @@ Choose Apple menu  <img src="https://github.com/nicolodiamante/keyave/assets/
 
 Using a password manager is essential in today's digital age. With so many accounts to keep track of, it's easy to fall into the trap of using the same password across multiple accounts or using weak passwords that are easy to guess. Apple has made it easy for users to manage their passwords by providing a built-in password manager that syncs across all Apple devices.
 
-To access the password manager on your Apple device, navigate to Settings or System Preferences, depending on which OS you are using. However, having to navigate to this location every time you want to manage your passwords can be time-consuming.
+<br>
+
+### Access passwords with a Shortcut
+
+To access the password manager on your Apple device, simply go to Settings (on iOS) or System Preferences (on macOS), and locate the Passwords option. Nonetheless, the need to revisit this location each time you wish to manage your passwords can be quite time-consuming.
+
+Access your passwords swiftly and conveniently with a straightforward shortcut can streamline your workflow. For iOS and iPadOS users, this means a single tap from your home screen, while macOS users can find it readily in the menu bar. To get started, ensure that you have the [Apple Shortcuts][apple-shortcuts-download] app installed. Next, download the [Passwords Shortcut][passwords-shortcut] or follow the provided instructions to download and run the script. This script not only retrieves the shortcut for you but also configures your terminal environment for Touch ID, significantly streamlining your authentication process.
+
+<br><br>
+
+<p align="center">
+  <a href="https://www.icloud.com/shortcuts/afd3e6896604451ab31cd303a153c881" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/keyave/assets/48920263/0240cd9b-e92f-4fb6-b141-adaf5b623d2d" draggable="false" ondragstart="return false;" alt="Download the Shortcut" title="Download Passwords" />
+      <img src="https://github.com/nicolodiamante/keyave/assets/48920263/0db142ee-ce14-4c84-b4cc-f932cc7e8641" draggable="false" ondragstart="return false; "alt="Download the Shortcut" title="Download Passwords" width="600" />
+    </picture>
+  </a>
+</p>
+
+<br><br>
 
 ### Manage passwords in the terminal
 
@@ -62,28 +79,82 @@ Macs have a fingerprint scanner (Touch ID) to simplify the login process. iCloud
 
 <p align="center">
   <picture>
-    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/090651d5-6e29-4c58-a19d-de144fe41224" draggable="false" ondragstart="return false;" alt="Use Touch ID in Terminal" title="Use Touch ID in Terminal" width="500px" />
+    <img src="https://github.com/nicolodiamante/keyave/assets/48920263/d72c8182-5f98-4354-9bd0-b27f59ea18e1" draggable="false" ondragstart="return false;" alt="Use Touch ID in Terminal" title="Use Touch ID in Terminal" width="500px" />
   </picture>
 </p>
 
 <br><br>
 
-Access your passwords swiftly and conveniently with a straightforward shortcut. For iOS and iPadOS users, this means a single tap from your home screen, while macOS users can find it readily in the menu bar or by pressing `⇧⌘P`. To get started, you can directly download the shortcut [here][passwords-shortcut]. Alternatively, you can follow the provided instructions to download and execute a script. This script not only downloads the shortcut for you but also configures your terminal environment to use Touch ID, streamlining your authentication process significantly.
+You can either manually set up Touch ID in your terminal by following the provided steps, or use the script for an automated process:
+
+- [Manual Setup](#manual-configuration-of-touch-id)
+- [Automated Script](#automated-configuration-of-touch-id)
+
+<br>
+
+> **Note:** Modifying PAM (Pluggable Authentication Module) configurations requires careful consideration due to its sensitive nature. It's imperative to fully comprehend each step and command involved in this process. Before making any changes, it is crucial to have up-to-date backups of your system to ensure safety and security. Proceed with caution and informed understanding.
+
+<br>
+
+## Manual Configuration of Touch ID
+
+### Before macOS Sonoma (Pre-macOS 14)
+
+1. **Open Terminal**: Start by launching the Terminal application on your Mac.
+
+2. **Edit Configuration**: Open the `/etc/pam.d/sudo` file in a text editor. For example, using nano, enter:
+
+   ```shell
+   sudo nano /etc/pam.d/sudo
+   ```
+
+3. **Integrate Touch ID**: At the beginning of the file, insert this line:
+
+   ```shell
+   auth       sufficient     pam_tid.so
+   ```
+
+4. **Save Changes**: After adding the line, save your changes and exit the text editor.
+
+Following these steps enables Touch ID authentication for the sudo command in Terminal, allowing fingerprint verification instead of a password prompt.
+
+<br>
+
+### macOS Sonoma (macOS 14) and Later
+
+macOS Sonoma introduced `/etc/pam.d/sudo_local`, a new file to maintain Touch ID configurations for sudo across system updates. Here's the setup process:
+
+1. **Verify sudo Presence**: macOS Sonoma includes a `sudo_local.template` file. Confirm its existence with:
+
+   ```shell
+   sudo cp sudo_local.template /etc/pam.d/sudo_local
+   ```
+
+2. **Create File**: If the `sudo_local.template` is present, duplicate it to create `sudo_local`:
+
+   ```shell
+   sudo cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local
+   ```
+
+3. **Modify Configuration**: Edit the `sudo_local` file in a text editor. Change:
+
+   ```shell
+   #auth       sufficient     pam_tid.so
+   ```
+
+   to:
+
+   ```shell
+   auth       sufficient     pam_tid.so
+   ```
+
+4. **Save and Test**: After editing, save the changes, close the editor, and test the new configuration by using the sudo command in Terminal.
+
+These steps enable Touch ID authentication for sudo commands on macOS Sonoma and later versions. For automated setup, consider using a script as outlined below.
 
 <br><br>
 
-<p align="center">
-  <a href="https://www.icloud.com/shortcuts/ff2374796e2a456a9e33da74d1191e99" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/keyave/assets/48920263/1b838eac-5400-45be-be27-66cf3ba58fae" draggable="false" ondragstart="return false;" alt="Download the Shortcut" title="Download Passwords" />
-      <img src="https://github.com/nicolodiamante/keyave/assets/48920263/80d9b639-fa5a-4102-84d8-525423c46f8f" draggable="false" ondragstart="return false; "alt="Download the Shortcut" title="Download Passwords" width="600" />
-    </picture>
-  </a>
-</p>
-
-<br><br>
-
-## Getting Started
+## Automated Configuration of Touch ID
 
 Keyave is a script designed to automate the setup of Touch ID authentication for terminal operations on Mac, replacing the need for password entry. Choose from two methods for installation:
 
@@ -109,15 +180,13 @@ git clone https://github.com/nicolodiamante/keyave.git ~/keyave
 source install.sh
 ```
 
-The script begins by checking your Mac's compatibility with Touch ID. If compatible, it provides the option to enable Touch ID for sudo commands, allowing for fingerprint-based authentication. Additionally, it features an option for automatic unlocking when the Mac is docked. These enhancements are specifically tailored to be applicable only on Mac models that support Touch ID, ensuring broad compatibility.
-
-This streamlined approach not only simplifies the authentication process but also enhances security and user experience on macOS.
+The script first determines the macOS version on your Mac. For macOS Sonoma (version 14) and later, it modifies the `sudo_local` file to enable Touch ID authentication for sudo commands. This is achieved by copying a template file and adjusting its settings to incorporate Touch ID support. If the system is running an earlier version of macOS, the script instead modifies the `sudo` file directly to enable Touch ID, adding the necessary configuration at the top of the file. In both scenarios, a backup of the original file is created for safety. The script is tailored to enhance security on Mac models with Touch ID capability.
 
 <br>
 
 ## Final Thoughts
 
-Apple's iCloud Keychain, integrated seamlessly into macOS menus and apps, stands out as an accessible and straightforward password management solution, particularly for casual users or families seeking ease of use. Beyond just storing passwords, iCloud Keychain extends its capabilities to encompass credit card details and other sensitive data, securely syncing across Apple devices. Enhanced by end-to-end encryption and biometric authentication, it not only offers a cost-effective option for secure login management but also stays proactive in scanning for potential password breaches. Recent updates have further enriched its functionality, allowing even third-party apps to utilize its secure storage features. This combination of user-friendly interface, advanced security measures, and comprehensive coverage makes iCloud Keychain a noteworthy choice in the realm of password managers.
+Apple's iCloud Keychain is a user-friendly password management solution seamlessly integrated into the macOS ecosystem. It's ideal for casual users and families looking for simplicity. Besides password storage, it securely handles credit card data and syncs across Apple devices. With end-to-end encryption and biometric authentication, it's cost-effective and proactive against password breaches. Recent updates enable third-party app integration. iCloud Keychain combines ease of use, strong security, and broad functionality, making it a standout password manager choice.
 
 <br><br>
 
@@ -209,7 +278,8 @@ Any suggestions or feedback you may have for improvement are welcome. If you enc
 
 [icloud-windows]: https://support.apple.com/en-us/HT204283
 [chrome-windows]: https://apps.microsoft.com/store/detail/icloud/9PKTQ5699M62?hl=en-us&gl=us&rtc=1&activetab=pivot%3Aoverviewtab
-[passwords-shortcut]: https://www.icloud.com/shortcuts/ff2374796e2a456a9e33da74d1191e99
+[apple-shortcuts-download]: https://apps.apple.com/us/app/shortcuts/id915249334
+[passwords-shortcut]: https://www.icloud.com/shortcuts/afd3e6896604451ab31cd303a153c881
 [setup-keychain]: https://support.apple.com/en-au/HT204085
 [security-overview]: https://support.apple.com/en-au/HT202303
 [two-factor]: https://support.apple.com/en-us/HT204915

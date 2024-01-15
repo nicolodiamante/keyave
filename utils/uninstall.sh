@@ -1,38 +1,51 @@
 #!/bin/zsh
 
 #
-# Uninstall Keyave.
+# Disable Touch ID for sudo on macOS
 #
 
-# Function to revert Touch ID for sudo changes.
-revert_touch_id_for_sudo() {
-  echo "Reverting Touch ID for sudo authentication..."
-  # Check for OS and use appropriate sed syntax.
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS requires an empty string as an argument to -i.
-    sudo sed -i '' '/auth sufficient pam_tid.so/d' /etc/pam.d/sudo
-  else
-    # Other Unix-like systems (like Linux) do not require an empty string.
-    sudo sed -i '/auth sufficient pam_tid.so/d' /etc/pam.d/sudo
-  fi
-}
+# Set PATHs
+SW_VERS=$(sw_vers --productVersion)
+OS_VERS=$(echo "$SW_VERS" | cut -d '.' -f 1)
+PAM_AUTH_FILE="/etc/pam.d/sudo_local"
+PAM_SUDO_FILE="/etc/pam.d/sudo"
 
-# Function to revert auto unlock when docked.
-revert_auto_unlock() {
-  echo "Reverting auto unlock when docked..."
-
-  # Explicitly set the system default to FALSE.
-  defaults write com.apple.security.authorization ignoreArd -bool FALSE
-}
-
-# Main script execution.
+# Main script execution
 echo "This will revert the changes made by the Keyave script."
-read -q "REPLY?Do you want to proceed with uninstallation? [y/N] "
+
+# Prompt the user
+echo -n "Do you want to proceed with disabling Touch ID for sudo? [y/N]: "
+read REPLY
 echo ""
 if [[ "$REPLY" =~ ^[Yy]$ ]]; then
-  revert_touch_id_for_sudo
-  revert_auto_unlock
-  echo "Uninstallation complete."
+  if [[ "$OS_VERS" -ge 14 ]]; then
+    if [[ -f "$PAM_AUTH_FILE" ]]; then
+      # Remove PAM local for macOS 14 and later
+      sudo /bin/rm "${PAM_AUTH_FILE}"
+      echo "Touch ID for sudo has been disabled for macOS."
+    else
+      echo "The ${PAM_AUTH_FILE} file does not exist. No changes made."
+    fi
+
+    # Restore the backup of sudo_local
+    BACKUP_FILE=$(ls -t /etc/pam.d/sudo_local_* | head -n 1)
+    if [[ -n "$BACKUP_FILE" ]]; then
+      sudo /bin/mv "${BACKUP_FILE}" "${PAM_AUTH_FILE}"
+      echo "Backup of sudo_local has been restored for macOS."
+    else
+      echo "No backup file found for sudo_local. No restoration made on macOS."
+    fi
+  else
+    # Handle macOS versions prior to macOS 14
+    # Find the most recent backup file
+    BACKUP_FILE=$(ls -t /etc/pam.d/sudo_* | head -n 1)
+    if [[ -n "$BACKUP_FILE" ]]; then
+      sudo /bin/mv "${BACKUP_FILE}" "${PAM_SUDO_FILE}"
+      echo "Touch ID for sudo has been disabled and original sudo configuration restored for macOS."
+    else
+      echo "No backup file found. Cannot revert changes on macOS."
+    fi
+  fi
 else
-  echo "Uninstallation cancelled by the user."
+  echo "Disabling Touch ID for sudo cancelled by the user."
 fi
