@@ -167,7 +167,7 @@ Keyave is a script designed to automate the setup of Touch ID authentication for
 **Automatic Download via `curl`:** Simply execute the following command in your terminal to quickly download and seamlessly install the utility:
 
 ```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/nicolodiamante/keyave/HEAD/bootstrap.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/nicolodiamante/keyave/HEAD/bootstrap.zsh)"
 ```
 
 **Manual Cloning:** For those who prefer a hands-on approach, you can manually clone the repository to your desired location (`~/keyave` in this case):
