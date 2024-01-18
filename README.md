@@ -180,7 +180,7 @@ git clone https://github.com/nicolodiamante/keyave.git ~/keyave
 
 ### Post-Download Steps
 
-**Directory Navigation & Script Execution**: Navigate to the root directory of the repository, and then execute the installation script using the following command:
+**Directory Navigation & Script Execution:** Navigate to the root directory of the repository, and then execute the installation script using the following command:
 
 ```shell
 source utils/install.zsh
