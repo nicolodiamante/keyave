@@ -180,10 +180,10 @@ git clone https://github.com/nicolodiamante/keyave.git ~/keyave
 
 ### Post-Download Steps
 
-**Directory Navigation & Script Execution**: Navigate to the repository's `utils` directory and execute the installation script:
+**Directory Navigation & Script Execution**: Navigate to the root directory of the repository, and then execute the installation script using the following command:
 
 ```shell
-source install.sh
+source utils/install.zsh
 ```
 
 The script first determines the macOS version on your Mac. For macOS Sonoma (version 14) and later, it modifies the `sudo_local` file to enable Touch ID authentication for sudo commands. This is achieved by copying a template file and adjusting its settings to incorporate Touch ID support. If the system is running an earlier version of macOS, the script instead modifies the `sudo` file directly to enable Touch ID, adding the necessary configuration at the top of the file. In both scenarios, a backup of the original file is created for safety. The script is tailored to enhance security on Mac models with Touch ID capability.
