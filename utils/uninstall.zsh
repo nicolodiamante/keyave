@@ -11,7 +11,7 @@ PAM_AUTH_FILE="/etc/pam.d/sudo_local"
 PAM_SUDO_FILE="/etc/pam.d/sudo"
 
 # Main script execution
-echo "This will revert the changes made by the Keyave script."
+echo "\nThis will revert the changes made by the Keyave script."
 
 # Prompt the user
 echo -n "Do you want to proceed with disabling Touch ID for sudo? [y/N]: "
@@ -22,18 +22,18 @@ if [[ "$REPLY" =~ ^[Yy]$ ]]; then
     if [[ -f "$PAM_AUTH_FILE" ]]; then
       # Remove PAM local for macOS 14 and later
       sudo /bin/rm "${PAM_AUTH_FILE}"
-      echo "Touch ID for sudo has been disabled for macOS."
+      echo "\nTouch ID for sudo has been disabled for macOS."
     else
-      echo "The ${PAM_AUTH_FILE} file does not exist. No changes made."
+      echo "\nThe ${PAM_AUTH_FILE} file does not exist. No changes made."
     fi
 
     # Restore the backup of sudo_local
     BACKUP_FILE=$(ls -t /etc/pam.d/sudo_local_* | head -n 1)
     if [[ -n "$BACKUP_FILE" ]]; then
       sudo /bin/mv "${BACKUP_FILE}" "${PAM_AUTH_FILE}"
-      echo "Backup of sudo_local has been restored for macOS."
+      echo "\nBackup of sudo_local has been restored for macOS."
     else
-      echo "No backup file found for sudo_local. No restoration made on macOS."
+      echo "\nNo backup file found for sudo_local. No restoration made on macOS."
     fi
   else
     # Handle macOS versions prior to macOS 14
@@ -41,11 +41,13 @@ if [[ "$REPLY" =~ ^[Yy]$ ]]; then
     BACKUP_FILE=$(ls -t /etc/pam.d/sudo_* | head -n 1)
     if [[ -n "$BACKUP_FILE" ]]; then
       sudo /bin/mv "${BACKUP_FILE}" "${PAM_SUDO_FILE}"
-      echo "Touch ID for sudo has been disabled and original sudo configuration restored for macOS."
+      echo "\nTouch ID for sudo has been disabled and original sudo configuration restored for macOS."
     else
-      echo "No backup file found. Cannot revert changes on macOS."
+      echo "\nNo backup file found. Cannot revert changes on macOS."
     fi
   fi
 else
-  echo "Disabling Touch ID for sudo cancelled by the user."
+  echo "\nDisabling Touch ID for sudo cancelled by the user."
 fi
+
+echo "\nKeyave: Touch ID for sudo disabled."
