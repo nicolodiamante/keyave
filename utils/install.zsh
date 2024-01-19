@@ -27,7 +27,7 @@ if [[ "$REPLY" =~ ^[Yy]$ ]]; then
   if [[ "$OS_VERS" -ge 14 ]]; then
     # Backup existing file
     if [[ -f "$PAM_AUTH_FILE" ]]; then
-      local BACKUP_FILE="${PAM_AUTH_FILE}_$(\date "+%Y%m%d%H%M%S").bak"
+      BACKUP_FILE="${PAM_AUTH_FILE}_$(\date "+%Y%m%d%H%M%S").bak"
       echo "\nBacking up existing file to ${BACKUP_FILE}..."
       sudo /bin/mv "${PAM_AUTH_FILE}" "${BACKUP_FILE}"
     fi
@@ -46,7 +46,7 @@ if [[ "$REPLY" =~ ^[Yy]$ ]]; then
     fi
   else
     # Backup existing sudo file
-    local BACKUP_FILE="${PAM_SUDO_FILE}_$(\date "+%Y%m%d%H%M%S").bak"
+    BACKUP_FILE="${PAM_SUDO_FILE}_$(\date "+%Y%m%d%H%M%S").bak"
     echo "\nBacking up existing sudo file to ${BACKUP_FILE}..."
     sudo /bin/cp "${PAM_SUDO_FILE}" "${BACKUP_FILE}"
 
